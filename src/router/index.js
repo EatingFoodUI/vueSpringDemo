@@ -2,18 +2,21 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import StudentLogin from '../views/StudentLogin.vue'
 import StudentHome from '../views/StudentHome.vue'
+import StudentSign from '../views/StudentSign.vue'
 Vue.use(VueRouter)
 
 const router = new VueRouter({
     routes: [
         { path: '/StudentLogin', component: StudentLogin },
-        { path: '/StudentHome', component: StudentHome }
+        { path: '/StudentHome', component: StudentHome },
+        { path: '/StudentSign', component: StudentSign },
     ]
 })
 
 // 挂载路由导航守卫
 router.beforeEach((to, from, next) => {
     if (to.path === '/StudentLogin') return next();
+    if (to.path === '/StudentSign') return next();
     // 获取token
     const tokenStr = window.sessionStorage.getItem('token');
     if (!tokenStr) return next('StudentLogin');

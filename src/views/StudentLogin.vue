@@ -5,9 +5,13 @@
         <div class="avatar_box">
             <img class="logoImg" src="../assets/logo1.png" alt="">
         </div>
+        <!--界面名称区域-->
+        <div class="pageName">
+            <a>登录</a>
+        </div>
         <!--登录表单区域-->
         <el-form ref="loginFormRef" :model="loginForm" :rules="loginFormRules" label-width="0px" class="login_form">
-            <!--用户名-->
+            <!--账号-->
             <el-form-item prop="StudentId">
                 <el-input v-model="loginForm.StudentId" prefix-icon="el-icon-user"></el-input>
             </el-form-item>
@@ -18,6 +22,7 @@
             <!--按钮-->
             <el-form-item class="btns">
                 <el-button type="primary" @click="login">登录</el-button>
+                <el-button type="success" @click="toSign">注册</el-button>
                 <el-button type="info" @click="resetLoginForm">重置</el-button>
             </el-form-item>
         </el-form>
@@ -37,9 +42,9 @@ export default {
             },
             // 表单的验证规则对象
             loginFormRules: {
-                // 验证用户名是否合法
+                // 验证账号是否合法
                 StudentId: [
-                    { required: true, message: '请输入用户名', trigger: 'blur' },
+                    { required: true, message: '请输入账号', trigger: 'blur' },
                     { min: 3, max: 15, message: '长度在 3 到 15 个字符', trigger: 'blur' }
                 ],
                 //验证密码是否合法
@@ -80,6 +85,9 @@ export default {
                     }
                 );
             });
+        },
+        toSign(){
+            this.$router.push("/StudentSign");
         }
     }
 };
@@ -87,13 +95,15 @@ export default {
 
 <style lang="less" scoped>
 .login_container{
-    background-color: #2b4b6b;
+    background-image: url("../assets/login-background.jpg");
     height: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 .login_box{
     width:450px;
     height: 300px;
-    background-color: #fff;
+    background-color: rgba(240, 240, 245, 0.932);
     border-radius: 3px;
     position:absolute;
     left:50%;
@@ -110,6 +120,15 @@ export default {
             height: 100%;
             width: 100%;
         }
+    }
+
+    .pageName{
+        position: absolute;
+        left:50%;
+        top:25%;
+        color:#317400;
+        font:25px/14px Georgia, "Times New Roman", Times, serif;
+        transform: translate(-50%);
     }
 }
 
