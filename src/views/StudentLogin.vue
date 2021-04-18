@@ -81,6 +81,7 @@ export default {
                         if(status == 1) return this.$message.error('密码错误')
                         if(status == 2) this.$message.success('登录成功')
                         window.sessionStorage.setItem("token",res.data.token);
+                        window.sessionStorage.setItem("teacherId", this.loginForm.StudentId);
                         this.$router.push("/StudentHome");
                     }
                 );
