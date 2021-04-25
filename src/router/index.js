@@ -7,6 +7,12 @@ import StudentSign from '../views/StudentSign.vue'
 import TeacherHome from '../views/teacher/TeacherHome.vue'
 import TeacherWelcom from '../views/teacher/TeacherWelcom.vue'
 import ShowAllCourse from '../views/teacher/courseManage/ShowAllCourse.vue'
+import ShowPersonInfo from '../views/teacher/InfoManage/ShowPersonInfo.vue'
+import UpdatePersonPic from '../views/teacher/InfoManage/UpdatePersonPic.vue'
+import ChangePwd from '../views/teacher/InfoManage/ChangePwd.vue'
+import TeacherLogin from '../views/teacher/TeacherLogin.vue'
+import TeacherSign from '../views/teacher/TeacherSign.vue'
+import ChangePersonInfo from '../views/teacher/InfoManage/ChangePersonInfo.vue'
 // Manager
 import ManagerHome from '../views/manager/ManagerHome.vue'
 import ManagerWelcom from '../views/manager/ManagerWelcom.vue'
@@ -21,6 +27,8 @@ const router = new VueRouter({
         { path: '/StudentLogin', component: StudentLogin },
         { path: '/StudentHome', component: StudentHome },
         { path: '/StudentSign', component: StudentSign },
+        { path: '/TeacherLogin', component: TeacherLogin },
+        { path: '/TeacherSign', component: TeacherSign },
         // Teacher
         {
             path: '/TeacherHome',
@@ -29,6 +37,10 @@ const router = new VueRouter({
             children: [
                 { path: '/TeacherWelcom', component: TeacherWelcom },
                 { path: '/ShowAllCourse', component: ShowAllCourse },
+                { path: '/ShowPersonInfo', component: ShowPersonInfo },
+                { path: '/UpdatePersonPic', component: UpdatePersonPic },
+                { path: '/ChangePwd', component: ChangePwd },
+                { path: '/ChangePersonInfo', component: ChangePersonInfo },
             ]
         },
         // Manager

@@ -9,6 +9,8 @@ import { Pagination } from 'element-ui'
 import { Dialog } from 'element-ui'
 import { MessageBox } from 'element-ui'
 import { Select, Option } from 'element-ui'
+import { Avatar } from 'element-ui'
+import { Upload } from 'element-ui'
 
 Vue.use(Button)
 Vue.use(Form)
@@ -33,5 +35,7 @@ Vue.use(Pagination)
 Vue.use(Dialog)
 Vue.use(Option)
 Vue.use(Select)
+Vue.use(Avatar)
+Vue.use(Upload)
 Vue.prototype.$message = Message
 Vue.prototype.$confirm = MessageBox.confirm

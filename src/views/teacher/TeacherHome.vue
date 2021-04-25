@@ -63,22 +63,22 @@ export default {
                     {
                         id:1011,
                         authorName:"展示个人信息",
-                        path:"null",
+                        path:"ShowPersonInfo",
                     },
                     {
                         id:1012,
                         authorName:"修改个人信息",
-                        path:"null",
+                        path:"ChangePersonInfo",
                     },
                     {
                         id:1013,
                         authorName:"修改个人头像",
-                        path:"null",
+                        path:"UpdatePersonPic",
                     },
                     {
                         id:1014,
                         authorName:"修改密码",
-                        path:"null",
+                        path:"ChangePwd",
                     }
                 ]
             },
@@ -157,7 +157,7 @@ export default {
         // 待修改成跳转到老师登录界面
         logout(){
             window.sessionStorage.clear();
-            this.$router.push('/StudentLogin');
+            this.$router.push('/TeacherLogin');
         },
         // 点击按钮,切换菜单的折叠与展开
         toggleCllapse(){
